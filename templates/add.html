@@ -1,0 +1,93 @@
+{% include "cdfile.html" %}
+{% include "navbar.html" %}
+
+  <div>
+
+    <h1 class="text-center my-3">create your new post !!</h1>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <div class="card bg-dark text-white">
+            <div class="card-body">
+              <form action="/blog/add/" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="mb-3">
+                  <label for="name">title</label>
+                  <input
+                    id="name"
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter emp name"
+                    name="name"
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="id">description</label>
+                  <input
+                    id="id"
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter emp id"
+                    name="emp_id"
+                  />
+                </div>
+
+                {% comment %} <div class="mb-3">
+                  <label for="phone">phone</label>
+                  <input
+                    id="phone"
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter emp phone"
+                    name="phone"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="address">Employee Address</label>
+                  <textarea
+                    name="address"
+                    id="address"
+                    rows="5"
+                    class="form-control"
+                  ></textarea>
+                </div> {% endcomment %}
+                <div class="mb-3 form-check">
+                  <label for="working">Done</label>
+                  <input id="working" name="working" type="checkbox" class="form-check-input">
+                </div>
+                <div class="mb-3 ">
+                  <label for="department">Category</label>
+                  <select name="department" id="department" class="form-control">
+                      <option value="CSE">Sports</option>
+                      <option value="ME">Finance</option>
+                      <option value="EE">Health and Fitness</option>
+                      <option value="ET">entertainment</option>
+                  </select>
+                </div>
+                <div>
+                  <input name="image_image" type ="file"/>
+                </div>
+                <div class="container text-center">
+                    <button class="btn btn-primary">
+                        Submit
+                    </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% comment %} <form action="">
+      {{form.as_p}}
+    </form> {% endcomment %}
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+</div>
